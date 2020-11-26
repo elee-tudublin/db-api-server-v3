@@ -114,7 +114,7 @@ let deleteProduct = async (productId) => {
 
     // Validate input - important as a bad input could crash the server or lead to an attack
     // appending + '' to numbers as the validator only works with strings
-    if (!productValidator.validateId(productId)) {
+    if (productValidator.validateId(productId) === false) {
         console.log("deleteProducts service error: invalid id parameter");
         return false;
     }

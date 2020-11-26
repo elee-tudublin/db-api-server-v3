@@ -6,7 +6,6 @@ const { sql, dbConnPoolPromise } = require('../database/db.js');
 
 // models
 const Product = require('../models/product.js');
-const Category = require('../models/category.js');
 
 // Define SQL statements here for use in function below
 // These are parameterised queries note @named parameters.
@@ -22,8 +21,8 @@ const SQL_SELECT_BY_ID = 'SELECT * FROM Product WHERE ProductId = @id for json p
 const SQL_SELECT_BY_CATID = 'SELECT * FROM Product WHERE CategoryId = @id ORDER BY ProductName ASC for json path;';
 
 // Second statement (Select...) returns inserted record identified by ProductId = SCOPE_IDENTITY()
-const SQL_INSERT = 'INSERT INTO Product (CategoryId, ProductName, ProductDescription, ProductStock, ProductPrice) VALUES (@categoryId, @productName, @productDescription, @ProductStock, @ProductPrice); SELECT * from dbo.Product WHERE ProductId = SCOPE_IDENTITY();';
-const SQL_UPDATE = 'UPDATE Product SET CategoryId = @categoryId, ProductName = @productName, ProductDescription = @productDescription, ProductStock = @ProductStock, ProductPrice = @ProductPrice WHERE ProductId = @id; SELECT * FROM dbo.Product WHERE ProductId = @id;';
+const SQL_INSERT = 'INSERT INTO Product (CategoryId, ProductName, ProductDescription, ProductStock, ProductPrice) VALUES (@categoryId, @productName, @productDescription, @ProductStock, @ProductPrice); SELECT * from Product WHERE ProductId = SCOPE_IDENTITY();';
+const SQL_UPDATE = 'UPDATE Product SET CategoryId = @categoryId, ProductName = @productName, ProductDescription = @productDescription, ProductStock = @ProductStock, ProductPrice = @ProductPrice WHERE ProductId = @id; SELECT * FROM Product WHERE ProductId = @id;';
 const SQL_DELETE = 'DELETE FROM Product WHERE ProductId = @id;';
 
 

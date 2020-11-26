@@ -2,6 +2,7 @@
 // require the database connection
 const { sql, dbConnPoolPromise } = require('../database/db.js');
 
+const Category = require('../models/category.js');
 
 // Define SQL statements here for use in function below
 // These are parameterised queries note @named parameters.

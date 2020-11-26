@@ -3,7 +3,7 @@
 const validator = require('validator');
 
 // models
-const Product = require('../models/Product.js');
+const Product = require('../models/product.js');
 
 // Validate id field
 let validateId = (id) => {
