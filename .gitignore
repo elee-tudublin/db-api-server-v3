@@ -6,3 +6,5 @@ obj/*
 config/Development.json
 config/Production.json
 config/default.json
+config/auth_config.json
+package-lock.json

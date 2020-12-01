@@ -2,7 +2,8 @@
 const express = require('express');
 const cors = require('cors')
 const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser');
+const morgon = require('morgan');
 
 const HOST = '127.0.0.1';
 const PORT = 8080;
@@ -18,6 +19,9 @@ app.use((req, res, next) => {
     res.setHeader("Content-Type", "application/json");
     next();
 }); 
+
+// Logging
+app.use(morgon('combined'));
 
 // Cookie support
 app.use(cookieParser());
